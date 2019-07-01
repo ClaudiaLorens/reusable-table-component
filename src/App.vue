@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <customTable :tableList="tableList" :tableHeaders="tableHeaders" :properties="propertiesTable">
+    <customTable :tableList="tableList" :tableHeaders="tableHeaders" :properties="propertiesTable" v-slot:default="slotProps">
       <i class="fas fa-times"></i>
       <i class="far fa-edit"></i>
     </customTable>

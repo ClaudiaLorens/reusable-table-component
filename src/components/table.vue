@@ -4,13 +4,13 @@
             <tr>
                 <th class="truncate" v-for="(headerTable, i) in tableHeaders" :key="`headerTable-${i}`">{{headerTable}}</th>
             </tr>
-            <tr v-for="(expense, i) in tableList" :key="`expense-${i}`">
-                    <td class="truncate tooltip" v-for="(property, index) in properties" :key="`property-${index}`">
-                        {{expense[property]}}
-                        <span>{{expense[property]}}</span>
-                    </td>
+            <tr v-for="(object, i) in tableList" :key="`object-${i}`">
+                <td class="truncate tooltip" v-for="(property, index) in properties" :key="`property-${index}`">
+                    {{object[property]}}
+                    <span>{{object[property]}}</span>
+                </td>
 
-                    <td><slot></slot></td>
+                <td><slot v-bind:object="object"></slot></td>
             </tr>
         </table>
     </div>
